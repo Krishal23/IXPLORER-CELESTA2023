@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Contacts - VitalEase</title>
+    <link rel="stylesheet" href="emergency_contacts.css">
+    
+</head>
+<body>
+    <header>
+        <h1 ><a class="active2" href="samaksh_services.html">&larr;&nbsp;</a>Emergency Contacts</h1>
+    </header>
+    <section class="content">
+        <h2>Manage Your Emergency Contacts</h2>
+        <p>Add, edit, and update your emergency contacts:</p>
+        <div class="contacts-list">
+        </div>
+        <div class="add-contact-form">
+            <form id="add-contact-form">
+                <label for="contact-name">Name:</label>
+                <input type="text" id="contact-name" name="contact-name" required>
+
+                <label for="contact-phone">Phone Number:</label>
+                <input type="tel" id="contact-phone" name="contact-phone" required>
+
+                <button type="button" id="add-contact">Add Contact</button>
+            </form>
+        </div>
+    </section>
+    <a href="chat_section.html"><button class="fab" id="open-chatbot" href="">&#128172;</button>
+    </a>
+    <footer>
+        <p>&copy; 2023 VitalEase. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const contactsList = document.querySelector('.contacts-list');
+        const addContactForm = document.getElementById('add-contact-form');
+        const addContactButton = document.getElementById('add-contact');
+        let contacts = [];  
+
+        const initialContacts = [
+            { name: 'John Doe (Suggested Doctor)', phone: '123-456-7890' },
+            { name: 'Jane Smith (Suggested Doctor)', phone: '987-654-3210' },
+        ];
+
+        function addContact(contact, isUserAdded = false) {
+            const contactElement = document.createElement('div');
+            contactElement.classList.add('contact');
+            contactElement.innerHTML = `
+                <p>${contact.name} - ${contact.phone}</p>
+            `;
+
+            if (isUserAdded) {
+                const editButton = document.createElement('button');
+                editButton.classList.add('edit-button');
+                editButton.textContent = 'Edit';
+                editButton.addEventListener('click', () => {
+                    const updatedName = prompt('Edit the contact name:', contact.name);
+                    const updatedPhone = prompt('Edit the contact phone number:', contact.phone);
+
+                    if (updatedName !== null && updatedPhone !== null) {
+                        contact.name = updatedName;
+                        contact.phone = updatedPhone;
+                        contactElement.querySelector('p').textContent = '${contact.name} - ${contact.phone}';
+                    }
+                });
+
+                const deleteButton = document.createElement('button');
+                deleteButton.classList.add('delete-button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.addEventListener('click', () => {
+                    const confirmDelete = confirm('Are you sure you want to delete this contact?');
+                    if (confirmDelete) {
+                        contactsList.removeChild(contactElement);
+                        const index = contacts.indexOf(contact);
+                        if (index > -1) {
+                            contacts.splice(index, 1);
+                        }
+                    }
+                });
+
+                contactElement.appendChild(editButton);
+                contactElement.appendChild(deleteButton);
+            }
+
+            contactsList.appendChild(contactElement);
+        }
+
+        function populateInitialContacts() {
+            initialContacts.forEach((contact) => {
+                addContact(contact, false);
+            });
+        }
+
+        addContactButton.addEventListener('click', () => {
+            const contactName = document.getElementById('contact-name').value;
+            const contactPhone = document.getElementById('contact-phone').value;
+
+            if (contactName && contactPhone) {
+                const newContact = { name: contactName, phone: contactPhone };
+                addContact(newContact, true); 
+
+                contacts.push(newContact);
+
+                document.getElementById('contact-name').value = '';
+                document.getElementById('contact-phone').value = '';
+            }
+        });
+
+        populateInitialContacts();
+    </script>
+</body>
+</html>

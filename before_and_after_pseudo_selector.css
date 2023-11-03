@@ -1,0 +1,43 @@
+header{
+    display: flex;
+    flex-direction: column;
+
+}
+body{
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation{
+    display: flex;
+    font-size: 20px;
+}
+
+li{
+    list-style: none;
+    padding: 34px 23px;
+}
+
+section{
+    height: 344px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid red;
+    justify-content: center;
+}
+
+/* section::before{
+    content: "Welcome to the coding world";
+    font-size: 4rem;
+} */
+
+h1{
+    font-size: 4rem;
+}
+
+section::after{
+    content: "This is a content";
+}

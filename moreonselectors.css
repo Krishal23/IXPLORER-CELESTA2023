@@ -1,0 +1,27 @@
+h1{
+    color: aquamarine;
+    background-color: khaki;
+    border: 2px solid red;
+    font-size: 25px;
+    text-align: center;
+}
+/* div p{
+    color: aqua;
+    background-color: grey;
+    font-size: 23px; */
+}
+div li p{
+    color: rgb(206, 235, 235);
+    background-color: grey;
+    font-size: 23px;
+}
+div > p{
+    color: rgb(243, 185, 149);
+    background-color: grey;
+    font-size: 23px;
+}
+
+div + p{
+    color: white;
+    background-color: red;
+}

@@ -1,0 +1,190 @@
+body, h1, p, form, label, input, textarea, button {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+
+header {
+    background-color: #ffbf00;
+    color: #fff;
+    text-align: start;
+    padding: 1rem 0;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin: 0;
+
+}
+
+.medication-management {
+    background-color: #fff;
+    padding: 4rem 0;
+}
+
+.medication-management h2 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+}
+
+.medication-management p {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.medication-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.medication-form form {
+    display: grid;
+    grid-gap: 10px;
+}
+
+.medication-form label {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.medication-form input, .medication-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.medication-form button {
+    background-color: #ffbf00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.medication-form button:hover {
+    background-color: #ffaa00;
+}
+
+.notification-list {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.notification {
+    background-color: #d4d4d4;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.notification p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.refill-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.refill-form form {
+    display: grid;
+    grid-gap: 10px;
+}
+
+.refill-form label {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.refill-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.refill-form button {
+    background-color: #ffbf00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.refill-form button:hover {
+    background-color: #ffaa00;
+}
+
+footer {
+    background-color: #ffbf00;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+#chatbot {
+    text-align: center;
+    padding: 4rem 0;
+    background-color: #007BFF;
+    color: #fff;
+}
+
+#chatbot h2 {
+    font-size: 2.5rem;
+}
+
+#chatbot p {
+    font-size: 1.2rem;
+}
+
+.fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 60px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+a.active2{
+    text-decoration: none;
+    color: white;
+    font-size: 2.4rem;
+    margin-right: 356px;
+
+    margin-left: 20px;
+}
+a.active2:hover{
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    /* background-color: #634c06; */
+}

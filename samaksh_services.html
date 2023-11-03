@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitalEase - Services</title>
+    <link rel="stylesheet" href="samaksh_services.css">
+</head>
+<body>
+    <header>
+        <h1>VitalEase Services</h1>
+        <img class="img2" href="about_us.html" src="Screenshot_2023-10-31_191750-removebg-preview.png" alt="">
+        
+        <nav>
+            <ul>
+                <li><a href="samaksh.html">Home</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a class="active" href="samaksh_services.html">Services</a></li>
+                <li><a href="contact_us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="services">
+        <div class="service-card1">
+            <img src="medication_logo-removebg-preview.png" alt="Service 1">
+            <div class="service-card-content1">
+                <a class = "active2" href="medication_management.html">
+                    <h3>Medication Management</h3>
+                </a>
+                <p>Stay on top of your medication schedule with our easy-to-use platform.</p>
+            </div>
+        </div>
+        <div class="service-card2">
+            <img src="emergency_contacts.jpg" alt="Service 2">
+            <div class="service-card-content2">
+                <a class = "active3" href="emergency_contacts.html">
+                <h3>Emergency Contacts</h3>
+                </a>
+                <p>Access vital emergency contacts at your fingertips for peace of mind.</p>
+            </div>
+        </div>
+        <div class="service-card3">
+            <img src="CommunityServicelargerwithwords.png" alt="Service 3">
+            <div class="service-card-content3">
+                <a class="active4" href="caregiver_communication.html">
+                    <h3>Caregiver Communication</h3>
+                </a>
+                <a class="enlarge" href="#">
+                <p>Stay connected with your caregivers for continuous support and care.</p>
+                </a>
+            </div>
+        </div>
+        <div class="service-card4">
+            <img src="remote_monitoring.png" alt="Service 4">
+            <div class="service-card-content4">
+                <a class = "active1" href="remote_monitoring.html">
+                    <h3>Remote Monitoring</h3>
+                </a>    
+                <p>Allow authorized relatives and healthcare providers to monitor your well-being from a distance.</p>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are dedicated to improving the lives of the elderly by providing innovative solutions for their daily challenges.</p>
+        <a href="about_us.html" class="btn-secondary">Learn More</a>
+    </section>
+    <a href="chat_section.html" class="CHATBOT"><section id="chatbot">
+        <h2>Have Questions? Ask Our Chatbot</h2>
+        <p>Our 24/7 chatbot is here to assist you. Whether you need information on medication, dietary choices, or any other details, we're here to help!</p>
+    </section></a>
+    <a href="chat_section.html"><button class="fab" id="open-chatbot" href="">&#128172;</button>
+    </a>
+    <footer>
+        <p>&copy; 2023 VitalEase. All rights reserved.</p>
+    </footer>
+    <script>
+        function openProfilePopup() {
+            var popup = document.getElementById('profile-popup');
+            popup.style.display = 'block';
+        }
+    
+        function closeProfilePopup() {
+            var popup = document.getElementById('profile-popup');
+            popup.style.display = 'none';
+        }
+    
+        var fabButton = document.getElementById('open-profile-popup');
+        var closeButton = document.getElementById('close-profile-popup');
+    
+        fabButton.addEventListener('click', function () {
+            openProfilePopup();
+        });
+    
+        closeButton.addEventListener('click', function () {
+            closeProfilePopup();
+        });
+    </script>
+</body>
+</html>

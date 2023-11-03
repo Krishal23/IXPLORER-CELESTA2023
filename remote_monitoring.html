@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitalEase - Remote Monitoring</title>
+    <link rel="stylesheet" href="remote_monitoring.css">
+
+</head>
+<body>
+    <header>
+        <h1 ><a class="active2" href="samaksh_services.html">&larr;&nbsp;</a>Remote Monitoring</h1>
+    </header>
+    <section class="content">
+        <h2>Monitor Vital Signs</h2>
+        <p>Enter your vital signs for monitoring:</p>
+        <div class="monitoring-form">
+            <form id="monitoring-form">
+                <label for="heart-rate">Heart Rate (bpm):</label>
+                <input type="number" id="heart-rate" name="heart-rate" required>
+
+                <label for="blood-pressure-systolic">Systolic Blood Pressure (mmHg):</label>
+                <input type="number" id="blood-pressure-systolic" name="blood-pressure-systolic" required>
+
+                <label for="blood-pressure-diastolic">Diastolic Blood Pressure (mmHg):</label>
+                <input type="number" id="blood-pressure-diastolic" name="blood-pressure-diastolic" required>
+
+                <label for="symptom-fever">Fever (°F):</label>
+                <input type="number" id="symptom-fever" name="symptom-fever" required>
+
+                <label for="symptom-cough">Cough (0-10):</label>
+                <input type="number" id="symptom-cough" name="symptom-cough" required>
+
+                <label for="symptom-breathlessness">Breathlessness (0-10):</label>
+                <input type="number" id="symptom-breathlessness" name="symptom-breathlessness" required>
+
+                <button type="button" id="start-monitoring">Start Monitoring</button>
+            </form>
+        </div>
+    </section>
+    <div class="loading-screen">
+        <p class="loading-text">Monitoring...</p>
+    </div>
+    <section class="results">
+        <div class="result-text" id="result-text"></div>
+    </section>
+    <!-- <section id="chatbot">
+        
+        <h2>Have Questions? Ask Our Chatbot</h2>
+        <p>Our 24/7 chatbot is here to assist you. Whether you need information on medication, dietary choices, or any other details, we're here to help!</p> -->
+    </section>
+    <a href="chat_section.html"><button class="fab" id="open-chatbot" href="">&#128172;</button>
+    </a>
+    <footer>
+        <p>&copy; 2023 VitalEase. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const monitoringForm = document.getElementById('monitoring-form');
+        const startMonitoringButton = document.getElementById('start-monitoring');
+        const loadingScreen = document.querySelector('.loading-screen');
+        const resultsSection = document.querySelector('.results');
+        const resultText = document.getElementById('result-text');
+
+        startMonitoringButton.addEventListener('click', function () {
+            showLoadingScreen();
+            simulateMonitoring();  
+        });
+
+        function showLoadingScreen() {
+            monitoringForm.style.display = 'none';
+            loadingScreen.style.display = 'flex';
+        }
+
+        function simulateMonitoring() {
+            setTimeout(function () {
+                loadingScreen.style.display = 'none';
+                displayResults();
+            }, 3000); 
+        }
+
+        function displayResults() {
+            resultsSection.style.display = 'block';
+            const heartRate = parseFloat(document.getElementById('heart-rate').value);
+            const systolicBP = parseFloat(document.getElementById('blood-pressure-systolic').value);
+            const diastolicBP = parseFloat(document.getElementById('blood-pressure-diastolic').value);
+
+            const fever = parseFloat(document.getElementById('symptom-fever').value);
+            const cough = parseFloat(document.getElementById('symptom-cough').value);
+            const breathlessness = parseFloat(document.getElementById('symptom-breathlessness').value);
+
+            const isFit = isPersonFit(heartRate, systolicBP, diastolicBP, fever, cough, breathlessness);
+
+            if (isFit) {
+                resultText.textContent = 'Results: You are fit and healthy.';
+            } else {
+                resultText.textContent = 'Results: You may need medical attention. Consult a healthcare professional.';
+            }
+        }
+
+        function isPersonFit(heartRate, systolicBP, diastolicBP, fever, cough, breathlessness) {
+            const heartRateThreshold = 100;
+            const systolicBPThreshold = 120;
+            const diastolicBPThreshold = 80;
+            const feverThreshold = 100.4;
+            const coughThreshold = 5;
+            const breathlessnessThreshold = 5;
+
+            return (
+                heartRate <= heartRateThreshold &&
+                systolicBP <= systolicBPThreshold &&
+                diastolicBP <= diastolicBPThreshold &&
+                fever <= feverThreshold &&
+                cough <= coughThreshold &&
+                breathlessness <= breathlessnessThreshold
+            );
+        }
+    </script>
+</body>
+</html>

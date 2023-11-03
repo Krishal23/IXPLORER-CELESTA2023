@@ -1,0 +1,57 @@
+.container{
+    height: 544px;
+    /* height: 100%; */
+    width: 100%;
+    border: 2px solid rgb(25, 25, 23);
+    /* Initialize the container as a flex box */
+    display: flex;
+    /* Flex properties for Flex container */
+    flex-direction: row; /* by default it is row*/
+    /* flex-direction: row-reverse; */
+    flex-wrap: wrap;
+    /* it is by default no wrap */
+
+    /* it includes both flex direction and flex-wrap both */
+    /* flex-flow: row-reverse wrap; */
+
+    /* justify-content: center  ;
+    justify-content: space-evenly;
+    justify-content: space-around; */
+    /* justify-content: space-between; */
+    align-items: center;
+    align-items: stretch; /*it is by default flex-start */
+
+}
+.item{
+    background-color: tomato;
+    border: 2px solid red;
+    margin: 12px;
+    padding: 4px;
+    width: 200px;
+    height: 200px;
+}
+
+#item-1{
+    /* flex properties for a flex item */
+    /* order: 2; */
+    flex: 2 2 344px; /*flex-grow flex-shrink flex-basis */
+    align-self: flex-end;
+    align-self: flex-start;
+    align-self: center;
+}
+#item-2{
+    /* flex properties for a flex item */
+    /* higher the order, later it shows up in the container */
+    /* order: 40; */
+    flex-grow: 3;/*you can't giv e negative value instead we use flex-shrink*/
+
+}
+#item-3{
+    /* flex properties for a flex item */
+    /* order: 3;
+    flex-grow: 2; */
+    flex-basis: 360px;
+     /* when the flex-direction is set to row flex-basis: will control width
+     when the flex-direction is set to column flex-basis: will control height */
+
+}

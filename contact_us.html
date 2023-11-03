@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - VitalEase</title>
+    <link rel="stylesheet" href="contact_us.css">
+    <link rel="import" href="thank_you.html">
+</head>
+<body>
+    <header>
+        <h1>VitalEase healthcare</h1>
+        <img class="img2" href="about_us.html" src="Screenshot_2023-10-31_191750-removebg-preview.png" alt="">
+        
+        <nav>
+            <ul>
+                <li><a href="samaksh.html">Home</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="samaksh_services.html">Services</a></li>
+                <li><a class="active" href="contact_us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="contact">
+        <h2>Contact VitalEase</h2>
+        <p>Feel free to get in touch with us. We are here to assist you.</p>
+        <div class="contact-form">
+            <form action="thank_you.html" >
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div class="contact-links">
+            <a href="https://www.instagram.com/celestaiitp_official/" target="_blank">instagram: @VitalEase</a>
+            <a href="https://www.linkedin.com/company/celesta-iit-patna/" target="_blank">LinkedIn: @VitalEase</a>
+        </div>
+    </section>
+    <a href="chat_section.html" class="CHATBOT"><section id="chatbot">
+        <h2>Have Questions? Ask Our Chatbot</h2>
+        <p>Our 24/7 chatbot is here to assist you. Whether you need information on medication, dietary choices, or any other details, we're here to help!</p>
+    </section></a>
+    <a href="chat_section.html"><button class="fab" id="open-chatbot" href="">&#128172;</button>
+    </a>
+    <footer>
+        <p>&copy; 2023 VitalEase. All rights reserved.</p>
+    </footer>
+    <script>
+        function openProfilePopup() {
+            var popup = document.getElementById('profile-popup');
+            popup.style.display = 'block';
+        }
+    
+        function closeProfilePopup() {
+            var popup = document.getElementById('profile-popup');
+            popup.style.display = 'none';
+        }
+    
+        var fabButton = document.getElementById('open-profile-popup');
+        var closeButton = document.getElementById('close-profile-popup');
+    
+        fabButton.addEventListener('click', function () {
+            openProfilePopup();
+        });
+    
+        closeButton.addEventListener('click', function () {
+            closeProfilePopup();
+        });
+    </script>
+</body>
+</html>

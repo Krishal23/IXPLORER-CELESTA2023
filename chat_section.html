@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Bot</title>
+    <link rel="stylesheet" href="chat_section.css">
+    
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Chat Samaksh</h2>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="loading-response">Hey, Team Samaksh welcomes you!!!</div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off">
+            <button id="send-button">Send</button>
+        </div>
+        
+    </div>
+    
+    <script>
+        const chatMessages = document.getElementById('chat-messages');
+        const userInput = document.getElementById('user-input');
+        const sendButton = document.getElementById('send-button');
+
+        function addMessage(who, message) {
+            const messageDiv = document.createElement('div');
+            messageDiv.textContent = who + ': ' + message;
+            chatMessages.appendChild(messageDiv);
+        }
+
+        function handleUserInput() {
+            const message = userInput.value;
+            addMessage('You', message);
+            userInput.value = '';
+
+            const lowerMessage = message.toLowerCase();
+            const greetings = ["hello", "hi","hii", "hey","heyy", "greetings", "howdy", "good day", "yo", "hi there", "hello there", "morning", "afternoon", "evening", "hi bot", "hi chatbot"];
+            const generalKnowledgeResponses = [
+                "The Earth orbits the Sun.",
+                "The capital of France is Paris.",
+                "The Great Wall of China is visible from space.",
+                "Water boils at 100 degrees Celsius (212 degrees Fahrenheit).",
+                "The currency of Japan is the Yen.",
+                "The Eiffel Tower is in France.",
+                "The human body has 206 bones.",
+                "The fastest land animal is the cheetah.",
+                "The largest planet in our solar system is Jupiter.",
+                "Leonardo da Vinci painted the Mona Lisa.",
+            ];
+
+            if (greetings.includes(lowerMessage)) {
+                addMessage('Samaksh', 'Hello! How can I assist you?');
+            } else if (lowerMessage.includes('how are you')) {
+                addMessage('Samaksh', "I'm just a computer program, but I'm here to help you!");
+            } else if (lowerMessage.includes('what is your name') || lowerMessage.includes('who are you') || lowerMessage.includes('name') || lowerMessage.includes('your name')) {
+                addMessage('Samaksh', "I'm Samaksh, your virtual assistant.");
+            } else if (lowerMessage.includes('thank you') || lowerMessage.includes('thanks')) {
+                addMessage('Samaksh', 'You\'re welcome! If you have more questions, feel free to ask.');
+            } else if (lowerMessage.includes('tell me something interesting')) {
+                const randomFact = generalKnowledgeResponses[Math.floor(Math.random() * generalKnowledgeResponses.length)];
+                addMessage('Samaksh', randomFact);
+            } else {
+                addMessage('Samaksh', "I'm not programmed to respond to that.");
+            }
+        }
+
+        sendButton.addEventListener('click', handleUserInput);
+        userInput.addEventListener('keypress', function (event) {
+            if (event.key === 'Enter') {
+                handleUserInput();
+            }
+        });
+
+setTimeout(function () {
+    const response = generateRandomResponse();
+    const loadingMessage = document.querySelector('.loading-response');
+    loadingMessage.textContent = response;
+}, 2000);  
+
+
+    </script>
+</body>
+</html>

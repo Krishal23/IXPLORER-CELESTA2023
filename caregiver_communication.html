@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communication Interface - VitalEase</title>
+    <link rel="stylesheet" href="caregiver_communication.css">
+
+</head>
+<body>
+    <header>
+        <h1 ><a class="active2" href="samaksh_services.html">&larr;&nbsp;</a>VitalEase Communication Interface</h1>
+    </header>
+    <div class="container">
+        <div class="chat">
+            <h3>Chat</h3>
+            <div class="messages" id="message-container">
+            </div>
+            <div class="message-input">
+                <input type="text" id="message" placeholder="Type your message">
+                <button id="send">Send</button>
+            </div>
+        </div>
+        <div class="video-call">
+            <h3>Video Call</h3>
+            <div class="video-stream" id="video-container">
+                <video id="local-video" autoplay muted style="width: 100%; height: 100%;"></video>
+            </div>
+            <button id="start-call">Start Video Call</button>
+            <button id="end-call">End Video Call</button>
+        </div>
+    </div>
+
+    <script>
+        const messageContainer = document.getElementById('message-container');
+        const messageInput = document.getElementById('message');
+        const sendButton = document.getElementById('send');
+
+        sendButton.addEventListener('click', () => {
+            const messageText = messageInput.value;
+            if (messageText) {
+                const messageElement = document.createElement('p');
+                messageElement.textContent = messageText;
+                messageContainer.appendChild(messageElement);
+                messageInput.value = '';
+            }
+        });
+
+        const startCallButton = document.getElementById('start-call');
+        const endCallButton = document.getElementById('end-call');
+        const localVideo = document.getElementById('local-video');
+        const videoContainer = document.getElementById('video-container');
+        let localStream;
+
+        let peerConnection;
+        const configuration = { iceServers: [{ urls: 'stun:stun.l.google.com:19302' }] };
+
+        startCallButton.addEventListener('click', async () => {
+            try {
+                localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+                localVideo.srcObject = localStream;
+
+                peerConnection = new RTCPeerConnection(configuration);
+
+                localStream.getTracks().forEach(track => peerConnection.addTrack(track, localStream));
+
+                peerConnection.ontrack = (event) => {
+                    const remoteVideo = document.createElement('video');
+                    remoteVideo.srcObject = event.streams[0];
+                    remoteVideo.autoplay = true;
+                    videoContainer.appendChild(remoteVideo);
+                };
+
+
+            } catch (error) {
+                console.error('Error accessing camera and microphone:', error);
+            }
+        });
+
+        endCallButton.addEventListener('click', () => {
+            if (localStream) {
+                localStream.getTracks().forEach(track => {
+                    track.stop();
+                });
+            }
+            
+            if (peerConnection) {
+                peerConnection.close();
+                peerConnection = null;
+            }
+
+            while (videoContainer.firstChild) {
+                videoContainer.firstChild.remove();
+            }
+
+            location.reload();
+        });
+    </script>
+</body>
+</html>

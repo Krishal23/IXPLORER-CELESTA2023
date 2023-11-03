@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medication Management - VitalEase</title>
+    <link rel="stylesheet" href="medication_management.css">
+
+</head>
+<body>
+    <header>
+        <h1 ><a class="active2" href="samaksh_services.html">&larr;&nbsp;</a>Medication Management</h1>
+    </header>
+    <section class="medication-management">
+        <h2>Manage Your Medication Regimens</h2>
+        <p>Input and manage your medication regimens:</p>
+        <div class="medication-form">
+            <form id="medication-form">
+                <label for="medication-name">Medication Name:</label>
+                <input type="text" id="medication-name" name="medication-name" required>
+
+                <label for="medication-dosage">Dosage:</label>
+                <input type="text" id="medication-dosage" name="medication-dosage" required>
+
+                <label for="medication-schedule">Schedule:</label>
+                <input type="text" id="medication-schedule" name="medication-schedule" required>
+
+                <label for="medication-notes">Notes:</label>
+                <textarea id="medication-notes" name="medication-notes"></textarea>
+
+                <button type="submit">Add Medication</button>
+            </form>
+        </div>
+        <div class="notification-list">
+            <div class="notification">
+                <p>Medication Name: Medication A</p>
+                <p>Schedule: 9:00 AM</p>
+                <p>Next Dose: Today, 9:00 AM</p>
+            </div>
+        </div>
+        <div class="refill-form">
+            <form>
+                <label for="medication-name-refill">Medication Name:</label>
+                <input type="text" id="medication-name-refill" name="medication-name-refill" required>
+
+                <label for="pharmacy-name">Pharmacy Name:</label>
+                <input type="text" id="pharmacy-name" name="pharmacy-name" required>
+
+                <label for="prescription-number">Prescription Number:</label>
+                <input type="text" id="prescription-number" name="prescription-number" required>
+
+                <button type="submit">Set Up Automatic Refill</button>
+            </form>
+        </div>
+    </section>
+    <a href="chat_section.html"><button class="fab" id="open-chatbot" href="">&#128172;</button>
+    </a>
+    <footer>
+        <p>&copy; 2023 VitalEase. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const medicationForm = document.getElementById('medication-form');
+        medicationForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            addMedicationToNotificationList();
+        });
+
+        function addMedicationToNotificationList() {
+            const medicationName = document.getElementById('medication-name').value;
+            const medicationSchedule = document.getElementById('medication-schedule').value;
+            const notificationList = document.querySelector('.notification-list');
+            const notification = document.createElement('div');
+            notification.classList.add('notification');
+            notification.innerHTML = `
+                <p>Medication Name: ${medicationName}</p>
+                <p>Schedule: ${medicationSchedule}</p>
+                <p>Next Dose: Today, ${medicationSchedule}</p>
+            `;
+            notificationList.appendChild(notification);
+            medicationForm.reset();
+        }
+    </script>
+</body>
+</html>

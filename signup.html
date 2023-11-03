@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitalEase - Login and Signup</title>
+    <link rel="stylesheet" href="signup.css">
+    
+</head>
+<body>
+    <header>
+        <h1>Signup to VitalEase</h1>
+        <nav>
+            <ul>
+                <li><a class="active" href="samaksh.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+        <form id="signup-form">
+            <input type="text" id="signup-fullname" placeholder="Full Name" required>
+            <input type="text" id="signup-email" placeholder="Email" required>
+            <input type="password" id="signup-password" placeholder="Password" required>
+            <button type="submit"><a class="active2" href="thank_you_registered.html">Signup</a></button>
+        </form>
+        <div class="signup-link">
+            <p>Have an account? <a class="active2" href="login.html">Login</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const username = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
+            
+        });
+
+        document.getElementById('signup-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const fullname = document.getElementById('signup-fullname').value;
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+        });
+    </script>
+</body>
+</html>

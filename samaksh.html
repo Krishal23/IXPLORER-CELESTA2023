@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitalEase - Home</title>
+    <link rel="stylesheet" href="samaksh.css">
+    
+</head>
+<body>
+    <header>
+        <h1>Welcome to VitalEase
+            
+        </h1>
+        
+        <img class="img2" href="about_us.html" src="Screenshot_2023-10-31_191750-removebg-preview.png" alt="">
+        
+
+        <img id="open-profile-popup" class="imga" src="profile3.png">
+<div class="popup-container" id="profile-popup">
+    <header>
+        <h3>User Information</h3>
+    </header>
+    <div class="popup-content">
+        <span class="close-popup" id="close-profile-popup">&times;</span>
+        
+        <div class="navbar-2">
+            <ul>
+                <h2>Kushal Kesharwani</h2>
+                <li>(123) 456-7890</li>
+                <li>Friends: Alice, Bob, Carol</li>
+                <li>Favorite Doctor: Dr. Smith</li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+
+
+        <nav class="navbar" role="navigation" align-item="centre">
+            <ul>
+                <li><a class = "active" href="samaksh.html">Home</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="samaksh_services.html">Services</a></li>
+                <li><a href="contact_us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="hero">
+        <h2>Empowering Elderly Individuals to Live Independently</h2>
+        <p>A user-friendly platform to manage medications, stay in touch with caregivers, and monitor your well-being.</p>
+        <a href="login.html" class="btn-primary">Login</a>&nbsp;<a href="signup.html" class="btn-primary">Signup</a>
+        
+    </section>
+    <section id="video">
+        <h2>Learn How to Use VitalEase</h2>
+        <p>Watch our video tutorial to get started with our platform:</p>
+        <video id="tutorial-video" controls>
+            <source src="VIDEOFOR.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+    
+    <a href="chat_section.html" class="CHATBOT"><section id="chatbot">
+        <h2>Have Questions? Ask Our Chatbot</h2>
+        <p>Our 24/7 chatbot is here to assist you. Whether you need information on medication, dietary choices, or any other details, we're here to help!</p>
+    </section></a>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are dedicated to improving the lives of the elderly by providing innovative solutions for their daily challenges.</p>
+        <a href="about_us.html" class="btn-secondary">Learn More</a>
+    </section>
+    <footer>
+        <p>&copy; 2023 VitalEase. All rights reserved.</p>
+    </footer>
+    <a href="chat_section.html"><button class="fab" id="open-chatbot" href="">&#128172;</button>
+    </a>
+    <script>
+        function openProfilePopup() {
+            var popup = document.getElementById('profile-popup');
+            popup.style.display = 'block';
+        }
+    
+        function closeProfilePopup() {
+            var popup = document.getElementById('profile-popup');
+            popup.style.display = 'none';
+        }
+    
+        var fabButton = document.getElementById('open-profile-popup');
+        var closeButton = document.getElementById('close-profile-popup');
+    
+        fabButton.addEventListener('click', function () {
+            openProfilePopup();
+        });
+    
+        closeButton.addEventListener('click', function () {
+            closeProfilePopup();
+        });
+    </script>
+
+</body>
+</html>

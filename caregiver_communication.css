@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007bff;
+    color: #fff;
+    text-align: start;
+    padding: 1rem 0;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin: 0;
+
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat, .video-call {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.messages {
+    height: 300px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.message-input {
+    display: flex;
+    align-items: center;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.video-stream {
+    height: 300px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.video-call button {
+    display: block;
+    margin-top: 10px;
+}
+
+#chatbot {
+    text-align: center;
+    padding: 4rem 0;
+    background-color: #007BFF;
+    color: #fff;
+}
+
+#chatbot h2 {
+    font-size: 2.5rem;
+}
+
+#chatbot p {
+    font-size: 1.2rem;
+}
+.fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 60px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+a.active2{
+    text-decoration: none;
+    color: white;
+    font-size: 2.4rem;
+    margin-right: 300px;
+
+    margin-left: 20px;
+}
+a.active2:hover{
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    /* background-color: #634c06; */
+}
